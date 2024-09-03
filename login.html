@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style type="text/css">
+        body
+        {
+            background-color: beige;
+            margin: 5px;
+        }
+        .navbar
+        {
+            background-color: beige;
+            border: 2px solid black;
+            border-radius: 2px;
+            overflow: hidden;
+            color: black;
+        }
+        .navbar a{
+            color: black;
+            float: left;
+            display: block;
+            padding: 15px 20px;
+            font-size: larger;
+            text-decoration: none;
+        }
+        .navbar a:hover
+        {
+            color: black;
+            background-color: #ddd;
+        }
+        /* CSS for the form */
+        .frm
+        {
+            display: block;
+            border: 3px solid #ccc;
+            width: 400px;
+            background-color: white;
+        }
+        .frm label
+        {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .frm input[type="text"],input[type="password"]
+        {
+            display: block;
+            width: 300px;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid black;
+            border-radius: 2px;
+            box-sizing: border-box;
+        }
+        .frm input[type="submit"]
+        {
+            width: 30%;
+            color: black;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid black;
+            cursor: pointer;
+        }
+        .frm input[type="submit"]:hover
+        {
+            background-color: beige;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="practhome.html" style="font-size: 30px;"><b><ins>Pearson Specter Litt</ins></b>&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;</a>
+            <a href="practhome.html" style="font-size:20px"><b>Home</b></a>
+            <a href="service.html" style="font-size:20px"><b>Services</b></a>
+            <a href="Login.html" style="font-size:20px"><b>Login</b></a>
+    </header>
+    <center>
+        <h1>Login Page</h1>
+    <form action="" class="frm">
+        <label for="name">Full Name : </label>
+        <input type="text" id="name" placeholder="Enter Name" required>
+        <br>
+        <label for="pass">Password : </label>
+        <input type="password" id="pass" placeholder="Enter Password" required>
+        <br>
+        <input type="submit">
+    </form>
+</body>
+</html>

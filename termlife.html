@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Term Life Insurnace</title>
+
+    <link rel="icon" type="image/x-icon" href="gl.png"> <!-- headlogo link-->
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-rHyoN1iRsVXV4nDdaReB8r/2+9QDpNVnOtN/pmTfaiUK3TI+IMqL4rU4qIpFVoVR" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/0b5201e8ad.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="homestyle.css"> <!--css linking-->
+
+
+    <style type="text/css">
+        body 
+        {
+            margin: 0;
+            font-family: serif;
+        }
+
+        .container-fluid
+        {
+            border: black solid 1px;
+        }
+       
+
+        #header {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #b2
+        {
+            width: 60%;
+            
+        }
+
+        .calculator-container 
+        {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .calculator-input 
+        {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+
+        .calculator-button 
+        {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer 
+        {
+            background-color: rgba(0,95,139,255);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            
+            bottom: 0;
+            width: 100%;
+        }
+        #head3
+        {
+            background-color: lightblue;
+            border: 1px solid black;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .container .card
+        {
+            
+            float: left;
+        }
+
+        .login-container {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .login-input {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+
+        #loginResult {
+            margin-top: 10px;
+        }
+        .services
+        {
+            margin-top: 17%;
+            background-color: #33bbff;
+            border-radius: 10px;
+            padding: 15px;
+            color:white;
+            width:98%;
+            margin-top: 6%;
+        }
+        .card-1{
+            margin-left: 5px;
+            padding-left: 5px;
+            padding-right: 8px;
+            height: 300px;
+            width: 413.3px;
+            background-color:#005580;
+            display: inline-grid;
+            font-family: arial, sans-serif;
+            color: white;
+            border: 2px solid black;
+            font-family: serif;
+        }
+        .card-2{
+            display: inline-grid;
+            padding-left: 5px;
+            padding-right: 8px;
+            height: 300px;
+            width: 413.3px;
+            background-color:#005580;
+            font-family: arial, sans-serif;
+            color: white;
+            border: 2px solid black;
+            font-family: serif;
+        }
+        .card-3{
+            height: 300px;
+            width: 413.3px;
+            padding-left: 5px;
+            padding-right: 8px;
+            background-color:#005580;   
+            display: inline-grid;
+            font-family: arial, sans-serif;
+            color: white;
+            border: 2px solid black;
+            font-family: serif;
+        }
+        .content
+        {
+            margin-top: none;
+            margin-left: 10%;
+            margin-right: 10%;
+            font-size: 20px;
+            color: white;
+            background-color:#005580;
+            text-align: justify;
+            padding: 5px 12px;
+            border: 2px solid black;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: rgba(0, 95, 139, 255);
+        }
+
+        
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: slideIn 1s ease-out;
+        }
+
+        th, td 
+        {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 15px;
+            color: black;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+         form {
+            text-align: left;
+            margin: 20px auto;
+            max-width: 500px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        label
+        {
+            display: block;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: rgba(0,95,139,255);;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: rgba(0,95,139,255);
+        }
+        label {
+            margin-right: 10px;
+        }
+        .container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .slide-in {
+            position: absolute;
+            left: -100%;
+            top: 50%;
+            transform: translate(0, -50%);
+            animation: slideIn 2s forwards;
+            height: 70%;
+            width: 70%;
+        }
+
+        @keyframes slideIn {
+            to {
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        
+        </style>
+     <script>
+        function calculatePremium() {
+            
+            var age = parseInt(document.getElementById('age').value);
+            var coverageAmount = parseFloat(document.getElementById('coverageAmount').value);
+            var term = parseInt(document.getElementById('term').value);
+            var smoking = document.getElementById('smoking').value;
+            var coverageType = document.getElementById('coverageType').value;
+
+            var basePremium = (coverageAmount / term) * 0.1; 
+
+            var ageFactor = 1 + (age / 100); 
+            var smokingFactor = smoking === 'smoker' ? 1.2 : 1; 
+            var coverageTypeFactor = coverageType === 'comprehensive' ? 1.5 : 1; 
+
+            var totalPremium = basePremium * ageFactor * smokingFactor * coverageTypeFactor;
+            var premiumTable = document.getElementById('premiumTable');
+            var premiumRow = premiumTable.insertRow(1);
+
+            var cells = premiumRow.insertCell(0);
+            cells.innerHTML = coverageType === 'comprehensive' ? 'Comprehensive Plan' : 'Basic Plan';
+
+            cells = premiumRow.insertCell(1);
+            cells.innerHTML = '₹' + formatNumber(coverageAmount);
+
+            cells = premiumRow.insertCell(2);
+            cells.innerHTML = term + ' years';
+
+            cells = premiumRow.insertCell(3);
+            cells.innerHTML = '₹' + formatNumber(totalPremium.toFixed(2));
+
+            cells = premiumRow.insertCell(4);
+            cells.innerHTML = 'Additional benefits based on selected criteria';
+
+            alert('The calculated monthly premium is ₹' + formatNumber(totalPremium.toFixed(2)));
+        }
+
+        function formatNumber(number) {
+            return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        function formatNumber(number) {
+            return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+  
+</script>
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-2">
+                    <img src="delta logo.jpg" id="logo" alt="Delta Insurance Logo" usemap="#deltamap">
+                    <map name="deltamap">
+                        <area shape="rect" coords="0,0,150,150" alt="Delta Insurance Logo" href="home.html">
+                    </map>
+                </div>
+                <div class="col-sm-7">
+                    <ul class="nav" id="header">
+                        <li class="nav-item"><a href="home.html" class="nav-link">Home</a></li>
+
+                        <li class="nav-item"><a href="aboutusfs.html" class="nav-link">About us</a></li>
+                        
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropbtn">Services</a>
+                            <div class="dropdown-content">
+                                <a href="health.html">Health Insurance</a>
+                                <a href="vehicle.html">Vehicle Insurance</a>
+                                <a href="termlife.html">Life Insurance</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item"><a href="terms.html" class="nav-link">Terms and Conditions</a></li>
+                        <li class="nav-item"><a href="calculator.html" class="nav-link">Calculator</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2" id="searchbar" style="float: left">
+                    <input type="text" placeholder="Search" class="form-control" style="border-radius: 5px">
+                </div>
+                <div class="col-sm-1">
+                    <button class="btn btn-dark mt-2" style=" border-radius: 5px;">Search</button>
+                    <br>
+                    <button id="login" class="btn btn-dark mt-2" style=" border-radius: 5px;" onclick="window.location.href='login.html';">Login</button>
+                </div>
+            </div>
+        </div>
+    </header>
+        <center>
+        <div class="container">
+            <img class="slide-in" src="famterm.jpg" alt="Sliding Image">
+        </div>
+        <div class="content">
+            <div>
+                <p>Welcome to Delta Insurance, where we prioritize your peace of mind with our life insurance solutions. At Delta, we understand the importance of securing your loved ones' financial future. Our life insurance plans are tailored to provide you with the reassurance that your family will be protected in the face of life's uncertainties. With Delta, you can take confident strides towards building a legacy that lasts. Choose Delta Insurance for a future filled with security and tranquility.</p>
+            </div>
+        </div>
+        <br>
+        <div class="card-1">
+            <h1><ins>Protection</ins></h1>
+            <ul>
+                <li>Death benefit: The core feature, providing a financial cushion for your loved ones if you pass away during the policy term.
+                </li>
+                <li>Term life: Pure protection, affordable, covers a specific term (e.g., 10 years, 20 years).</li>
+                <li>Universal life: Combines protection with a cash value component that grows over time.</li>
+                <li>Whole life: Guaranteed coverage for your entire life, also builds cash value.</li>
+            </ul>
+        </div>&nbsp;
+        <div class="card-2">
+            <h1><ins>Financial Planning</ins></h1>
+            <ul>
+                <li>Maturity benefit: Pays out a lump sum when the policy reaches its maturity date (for whole and endowment policies).</li>
+                <li>Cash value accumulation: Some policies accrue cash value that can be accessed through loans or withdrawals (universal and whole life).</li>
+                <li>Riders: Add-ons providing extra benefits like disability income, accidental death, or critical illness coverage.</li>
+            </ul>
+        </div>&nbsp;
+        <p></p>
+        <div class="card-3">
+            <h1><ins>Flexibility and Accessibility</ins></h1>
+            <ul>
+                <li>Premium options: Choose premium payment terms like monthly, yearly, or single pay.</li>
+                <li>Policy adjustments: Some policies allow adjustments like changing the death benefit or extending the coverage term.</li>
+                <li>Beneficiary designations: Choose who receives the death benefit, with options to change or add beneficiaries over time.</li>
+            </ul>
+        </div>
+    </div>
+    <center>
+        <table >
+        <thead>
+            <tr style="text-align: center">
+                <th>Policy Type</th>
+                <th>Coverage Amount (INR)</th>
+                <th>Term</th>
+                <th>Monthly Premium (INR)</th>
+                <th>Additional Benefits</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Term Life Insurance - Basic</td>
+                <td>₹50,00,000</td>
+                <td>20 years</td>
+                <td>₹5,000</td>
+                <td>Accidental Death Benefit</td>
+            </tr>
+            <tr>
+                <td>Whole Life Insurance - Comprehensive</td>
+                <td>₹1,00,00,000</td>
+                <td>Lifetime</td>
+                <td>₹10,000</td>
+                <td>Critical Illness Coverage, Tax Benefits</td>
+            </tr>
+            <tr>
+                <td>Endowment Plan</td>
+                <td>₹30,00,000</td>
+                <td>15 years</td>
+                <td>₹7,500</td>
+                <td>Guaranteed Maturity Benefit</td>
+            </tr>
+            <tr>
+                <td>Child Education Plan</td>
+                <td>₹20,00,000</td>
+                <td>18 years</td>
+                <td>₹4,000</td>
+                <td>Education Fund, Premium Waiver</td>
+            </tr>
+            <tr>
+                <td>Retirement Savings Plan</td>
+                <td>₹80,00,000</td>
+                <td>25 years</td>
+                <td>₹8,500</td>
+                <td>Guaranteed Income, Tax Benefits</td>
+            </tr>
+        </tbody>
+    </table>
+        <br>
+        <h2><ins>Life Insurance Premiums Calculator</ins></h2>
+    <form id="premiumCalculator">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+
+        <label for="coverageAmount">Coverage Amount (INR):</label>
+        <input type="number" id="coverageAmount" name="coverageAmount" required>
+
+        <label for="term">Term (years):</label>
+        <input type="number" id="term" name="term" required>
+
+        <label for="smoking">Smoking Status:</label>
+        <select id="smoking" name="smoking" required>
+            <option value="non-smoker">Non-Smoker</option>
+            <option value="smoker">Smoker</option>
+        </select>
+
+        <label for="coverageType">Coverage Type:</label>
+        <select id="coverageType" name="coverageType" required>
+            <option value="basic">Basic Coverage</option>
+            <option value="comprehensive">Comprehensive Coverage</option>
+        </select>
+        <center>
+        <button type="button" onclick="calculatePremium()">Calculate Premium</button>
+    </center>
+    </form>
+    <footer style="background-color: rgba(0,95,139,255); color: white; padding: 10px;">
+    <div>
+        <div class="row">
+            <!-- First Column: Contact Us -->
+            <div class="col-md-6">
+                <h4>Contact Us</h4>
+                <ul class="list-unstyled">
+                    <li>Address: RajajiNagar, Bangalore</li>
+                    <li>Phone: +9877283638</li>
+                    <li>Email: info@deltainsurance.com</li>
+                </ul>
+                <h4>Follow Us</h4>
+                <ul class="list-inline social-icons">
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-facebook"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+            <!-- Second Column: Follow Us and Map -->
+            <div class="col-md-6">
+                
+                <!-- Embedded Map -->
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.568992091073!2d77.6105053141173!3d12.934808890882124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15b88b363683%3A0x96a0e21d0cb9a786!2sChrist%20University!5e0!3m2!1sen!2sin!4v1647839505267!5m2!1sen!2sin" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

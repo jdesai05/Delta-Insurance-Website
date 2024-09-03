@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="gl.png">
+    <link rel="stylesheet" type="text/css" href="homestyle.css"> <!--css linking-->
+   
+
+	<title>Car Form</title>
+	<style>
+	body
+	{
+		background-color:lightgrey;
+		font-family:serif;
+
+		margin:0;
+	}
+	.Caricon{
+		width:80px;
+		height:80px;
+		background-color: #fff;
+		margin-left: 48%;
+		margin-bottom:-50px;
+		border-radius: 8px;
+		margin-top: 3%;
+	}
+	.Caricon img{
+		width:70px;
+		height: 70px;
+		padding: 5px;
+	}
+	.usericon{
+		width:80px;
+		height:80px;
+		background-color: #fff;
+		margin-left: 48%;
+		margin-bottom:-50px;
+		border-radius: 8px;
+		margin-top: 5%;
+	}
+	.usericon img
+	{
+		width:70px;
+		height: 70px;
+		padding: 5px;
+	}
+	
+	form{
+		background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 400px;
+        height: 400px;
+        margin-left:35%;
+        margin-top: 5%;
+	}
+	#heading{
+		text-align: center;
+		font-family:Arial, sans-serif;
+		margin-bottom: 15%;
+	}
+	table{
+		margin-top: 10px;
+	}
+	tr{
+		padding: 15px;
+
+	}
+	td{
+		font-size: 20px;
+		margin-bottom: 10px;
+	}
+	input{
+		width: 120%;
+		height: 30px;
+		font-size: 15px;
+	}
+	select{
+		width: 124%;
+		height: 30px;
+		font-size: 15px;
+	}
+	#heading-2{
+		text-align: center;
+		font-family:Arial, sans-serif;
+	}
+	button{
+		margin: 5px;
+		font-size: 20px;
+		border-radius: 5px;
+		width: 80%;
+		font-family:arial,sans-serif;
+		height: 30px;
+		background-color:rgba(0,95,139,255);
+		color:white;
+	}
+	button:hover{
+		color:white;
+		background-color: #333;
+	}
+	footer{
+        margin-top: 5%;
+        background-color: rgba(0,95,139,255);
+        color: white;
+        padding: 10px;
+   	    text-align: center;    
+		bottom: 0;
+		width: 100%;
+    }
+   	#tac-heading{
+    	margin-top: 10%;
+        text-align: center;
+        font-family: arial, sans-serif;
+        font-size: 40px;
+    }
+    #tac{
+        margin-left: 12%;
+        margin-right: 12%;
+        font-family:sans-serif;
+        color: white;
+        margin-bottom: 30px;
+        background-color: #005580;
+        border: 5px;
+        border-radius: 10px;
+        padding: 5%;
+        margin-top:30px ;
+		font-size: 20px;
+    }
+	</style>
+</head>
+<body>
+	
+    <br>
+	<div class="Caricon">
+		<img src="car.png">
+	</div>
+
+	<form id="car-details">
+		<h1 id="heading">Car Details</h1>
+			<table>
+				<tr>
+					<td> <label>Car Model: <font style="color: red">*</font></label> </td>
+					<td> <input type="text" placeholder="eg- Maruti Ritz" required> </td>
+				</tr>
+				<tr>
+					<td> <label>Fuel Type: <font style="color: red">*</font></label> </td>
+					<td><SELECT required>
+						<option>Petrol</option>
+						<option>Diesel</option>
+					</SELECT></td>
+				</tr>
+				<tr>
+					<td> <label>Date for Delivery: <font style="color: red">*</font></label> </td>
+					<td> <input type="date" required> </td>
+				</tr> 
+				<tr>
+					<td> <label>Car number: <font style="color: red">*</font></label></td>
+					<td> <input type="text" placeholder="eg -KA 01 MH 9812"></td>
+			</table>
+	</form>
+
+
+	<div class="usericon">
+		<img src="user.png">
+	</div>
+	<form id="personal-details">
+		<h1 id="heading">Personal Details</h1>
+			<table>
+				<tr>
+					<td> <label>Name: <font style="color: red">*</font></label> </td>
+					<td> <input type="text" required> </td>
+				</tr>
+				<tr>
+					<td> <label>Phone Number: <font style="color: red">*</font></label> </td>
+					<td><input type="text" required></td>
+				</tr>
+				<tr>
+					<td> <label>Mail Address: <font style="color: red">*</font></label> </td>
+					<td> <input type="text" required> </td>
+				</tr> 
+			</table>
+			<br>
+			<br>
+		<div> <center> <button type="SUBMIT">PROCEED</button> </center> </div>
+	</form>
+
+ 	<div class="Terms-and-co">
+        <h1 id="tac-heading">Terms And Conditions <span class="arrow-down" onclick="toggleVisibility()" id="arrow"></span></h1>
+        <p id="tac">
+        	1. Coverage Period:
+
+Clearly define the start and end dates of the insurance coverage.<BR><BR>
+2. Premiums:
+
+Specify the amount of premium to be paid and the frequency of payments (e.g., monthly, annually).
+Outline the consequences of late or missed payments.<BR><BR>
+3. Coverage Details:
+
+Clearly outline what is covered by the insurance policy, including:
+Third-party liability coverage.
+Comprehensive coverage.
+Collision coverage.
+Uninsured/underinsured motorist coverage.
+Any additional coverage or add-ons.<BR><BR>
+4. Exclusions:
+
+List specific events or circumstances that are not covered by the policy.
+Common exclusions may include intentional acts, racing, or driving under the influence.<BR><BR>
+5. Deductibles:
+
+Specify the deductible amount applicable to different types of claims.<BR><BR>
+6. Claim Procedures:
+
+Detail the steps to be taken in the event of a claim.
+Include contact information for the claims department.<BR><BR>
+7. Renewal Conditions:
+
+Explain the process and conditions for policy renewal.
+Outline any changes in premium or coverage that may occur upon renewal.<BR><BR>
+8. Cancellation Policy:
+
+Specify the conditions under which either the insurer or the policyholder can cancel the policy.
+Outline any penalties or fees associated with early cancellation.<BR><BR>
+9. Responsibilities of the Insured:
+
+Clearly state the responsibilities of the policyholder, such as providing accurate information, notifying the insurer of changes, and cooperating in the claims process.<BR><BR>
+10. No-Claims Bonus:
+- Detail any no-claims bonus or discount and how it may be affected by claims.<BR><BR>
+
+11. Territorial Limits:
+- Specify the geographical areas where the coverage is applicable.<BR><BR>
+
+12. Endorsements and Amendments:
+- Outline the conditions under which the policy can be amended or endorsed.<BR><BR>
+
+13. Force Majeure:
+- Include a clause addressing events beyond the control of the parties, such as natural disasters or acts of terrorism.<BR><BR>
+
+14. Legal Compliance:
+- Specify that the insured must comply with all applicable laws and regulations related to the use and maintenance of the insured vehicle.<BR><BR>
+        </p>
+    </div>
+
+	<footer>
+		<p>&copy; 2024 Delta Vehicle Insurance. All rights reserved.</p>
+	</footer>
+</body>
+</html>

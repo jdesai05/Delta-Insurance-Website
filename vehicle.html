@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vehicle Ins</title> 
+    <link rel="icon" type="image/x-icon" href="gl.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-rHyoN1iRsVXV4nDdaReB8r/2+9QDpNVnOtN/pmTfaiUK3TI+IMqL4rU4qIpFVoVR" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/0b5201e8ad.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="homestyle.css">
+
+
+    <style>
+         body 
+        {
+            margin: 0;
+            font-family: serif;
+        }
+
+        .container-fluid
+        {
+            border: black solid 1px;
+        }
+       
+
+        #header 
+        {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        
+
+        
+        #b2
+        {
+            width: 60%;
+            
+        }
+
+        .calculator-container 
+        {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .calculator-input 
+        {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+              .calculator-button 
+        {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer 
+        {
+            background-color: rgba(0,95,139,255);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            
+            bottom: 0;
+            width: 100%;
+        }
+        #head3
+        {
+            background-color: lightblue;
+            border: 1px solid black;
+            border-radius: 10px;
+            text-align: center;
+        }
+           .container .card
+        {
+            
+            float: left;
+        }
+
+        .login-container {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .login-input {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+
+        #loginResult {
+            margin-top: 10px;
+        }
+
+
+
+        .content{
+            margin-top: none;
+            margin-left: 10%;
+            margin-right: 10%;
+            font-size: 32px;
+            font-family:serif;
+            color: white;
+            background-color:rgba(0,95,139,255);
+            text-align: center;
+            padding: 5px 12px;
+            border: 3px black solid;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .insure-now
+        {
+            padding-bottom: 55px;
+        }
+        
+        
+        .insure-now img{
+            height: 170px;
+            width: 175px;
+            margin-top: 7%; 
+        }
+        #p1{
+            text-align: center;
+            font-family: serif;  
+        } 
+        #car{
+            margin-left: 32%;
+            margin-top:0%;
+        }
+        #bike{
+            margin-left: 13%;
+            margin-top: .5%;
+        }
+        #choose-car{
+            width:90px;
+            height:90px;
+            margin-left: 40%;
+            background-color:#33bbff;   
+            border:2px solid black;
+            border-radius: 10px;
+            padding: 5px;   
+        }
+        #choose-car:hover, #choose-bike:hover
+        {
+            opacity: 0.5;
+        }
+        #choose-bike{
+            width:90px;
+            height:90px;
+            margin-left: 11%;
+            background-color:#33bbff; 
+            border:2px  solid black;
+            border-radius: 10px;
+            padding: 5px;
+        }
+        .services
+        {
+            margin-top: 17%;
+            background-color: #33bbff;
+            border: solid black 3px;
+            border-radius: 10px;
+            padding: 15px;
+            color:white;
+            width:98%;
+            margin-top: 6%;
+        }
+        .card-1{
+            margin-left: 5px;
+            padding-left: 5px;
+            padding-right: 8px;
+            height: 300px;
+            width: 413.3px;
+            background-color:#005580;
+            display: inline-grid;
+            font-family: serif;
+            color: white;
+            border: solid black 2px;
+        }
+        .card-2{
+            display: inline-grid;
+            padding-left: 5px;
+            padding-right: 8px;
+            height: 300px;
+            width: 413.3px;
+            background-color:#005580;
+            font-family:serif;
+            color: white;
+            border: solid black 2px;
+
+        }
+        .card-3{
+            height: 300px;
+            width: 413.3px;
+            padding-left: 5px;
+            padding-right: 8px;
+            background-color:#005580;   
+            display: inline-grid;
+            font-family:serif;
+            color: white;
+            border: solid black 2px;
+            margin-top: 10px
+        }
+        #fam-img{
+            margin-left: 45%;
+            width: 200px;
+            height: 200px;
+            margin-top: 6%;
+        }
+        .users{
+            width: 100%;    
+            background-color:rgba(0,95,139,255);;
+            height: 100px;
+            border-radius: 5px;
+            border: 5px;
+            margin-top: 6%;
+        }
+        #u1h{
+            font-size:45px;
+            margin-left: 35%;
+            color: white;
+        }
+        #u1p{
+            font-size: 22px;
+            margin-left: 35.5%;
+            margin-top: -10px;
+            color: white;
+        }
+        #u2h{
+            font-size:45px;
+            margin-left: 55%;
+            margin-top:-100px;
+            color: white;
+        }
+        #u2p{
+            font-size: 22px;
+            margin-left: 57.5%;
+            margin-top: -10px;
+            color: white;
+        }
+        .vertical-line{
+            background-color: black;
+            height: 200px;
+            width: 3px;
+            margin-left: 53%;
+            margin-top: -150px;
+            margin-bottom: 10%;
+        }
+        #car{
+            
+            animation: moveCar 4s linear forwards;
+            position: absolute;
+        }
+        @keyframes moveCar {
+        0% {
+            left:-200px;
+            }
+            100% {
+            left: 5%;
+            }
+        }
+        #bike{
+            animation: moveBike 4s linear forwards;
+            position: absolute;
+        }
+        @keyframes moveBike 
+        {
+        0% 
+        {
+            right:200px;
+            }
+            100% 
+            {
+            right: 35%;
+            }
+        }
+        .Terms-and-co{
+        }
+        #tac-heading{
+            text-align: center;
+            margin-bottom: ;
+        }
+        #tac
+        {
+            margin-left: 12%;
+            margin-right: 12%;
+            font-family:serif;
+            color: white;
+            margin-bottom: 30px;
+            background-color: #005580;
+            border: 5px;
+            border-radius: 10px;
+            padding: 5%;
+            margin-top:30px ;
+            font-size: 1.3em;
+        }
+        #why-h{
+            text-align: center;
+            margin-top: -100px;
+        }
+        #why-p{
+            margin-left: 10%;
+            margin-right: 10%;
+            font-size: 20px;
+        }
+        footer{
+            margin-top: 5%;
+        }
+        #login
+        {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        .arrow-down {
+            cursor: pointer;
+        }
+
+        .arrow-down::after {
+            content: '\2193'; /* Unicode character for down arrow */
+            margin-left: 5px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .arrow-down.active::after {
+            transform: rotate(180deg);
+        }
+
+
+        table {
+            width: 48%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0,95,139,255);
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 18px;
+        }
+
+        th {
+            background-color: rgba(0,95,139,255);
+            color: #fff;
+        }
+        #accident{
+            color:black;
+            text-align: justify;
+            height: 200px;
+            padding: 80px;
+        }
+        .accident-img-1, .accident-img-2 {
+            position: relative;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .accident-img-1 {
+            background-image: url("accident1.jpg");
+            min-height: 100vh;
+        }
+        #accident-text{
+            text-align:center;
+            color:black;
+        }
+        .YouAreSafe{
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            color: #000;
+
+        }
+        .ursafe{
+            background-color: #111;
+            color: #fff;
+            padding: 18px;
+            font-size: 25px;
+            letter-spacing: 10px;
+        }
+        .accident-img-2 {
+            background-image: url("ursafe.jpg");
+            min-height: 100vh;
+        }
+        #insurance-plans #plans-text{
+            text-align:center;
+            color:black;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+     <header>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-2">
+                    <img src="delta logo.jpg" id="logo" alt="Delta Insurance Logo">
+                </div>
+                <div class="col-sm-7">
+                    <ul class="nav" id="header">
+                        <li class="nav-item"><a href="home.html" class="nav-link">Home</a></li>
+
+                        <li class="nav-item"><a href="aboutusfs.html" class="nav-link">About us</a></li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropbtn">Services</a>
+                            <div class="dropdown-content">
+                                <a href="health.html">Health Insurance</a>
+                                <a href="vehicle.html">Vehicle Insurance</a>
+                                <a href="termlife.html">Life Insurance</a>
+                            </div>
+                        </li>
+
+                        
+                        <li class="nav-item"><a href="terms.html" class="nav-link">Terms and Conditions</a></li>
+                        <li class="nav-item"><a href="calculator.html" class="nav-link">Calculator</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2" id="searchbar" style="float: left">
+                    <input type="text" placeholder="Search" class="form-control" style="border-radius: 5px">
+                </div>
+                <div class="col-sm-1">
+                    <button class="btn btn-dark mt-2" style=" border-radius: 5px;">Search</button>
+                    <br>
+                    <button id="login" class="btn btn-dark mt-2" style=" border-radius: 5px;" onclick="window.location.href='login.html';">Login</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+ <br>
+ <br>
+<div class="container">
+    <div class="insure-now">
+        <div style="display: inline-block; margin-bottom: 20px;"> <img src="car icon.png" alt="car insurance" id="car">
+        </div>
+        <div style="display: inline-block; margin-bottom: 20px;"> <img src="bike icon.png" alt="bike insurance" id="bike">
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <div class="content">
+        <div>
+            <p>Welcome to Delta Vehicle Insurance, your go-to destination for comprehensive coverage that safeguards your prized possession on the road. Our commitment is to provide you with peace of mind, ensuring that you and your vehicle are protected in every journey</p>
+        </div>
+    </div><br><br>
+    
+    <div>
+      <h2 id="p1">Choose the vehicle you want to insure</h2>
+    </div><br>
+   
+    <div class="choose-vehicle">
+        <div>
+            <a href="CarForm.html"><img src="car.png" id="choose-car"></a>
+            <a href="BikeForm.html"><img src="motorcycle.png" id="choose-bike"></a>
+        </div>
+    </div>
+
+    <center>
+    <div class="services">
+        <div class="card-1">
+            <h1>Full Coverage Assurance</h1>
+            <p>Enjoy the confidence of complete protection with our full coverage insurance. This comprehensive plan includes coverage for accidents, theft, natural disasters, and more, ensuring you're covered in any situation.</p>
+        </div>&nbsp;
+        <div class="card-2">
+            <h1>Customizable Policies</h1>
+            <p>Tailor your insurance policy to match your lifestyle. Our customizable options allow you to choose the coverage that matters most to you, whether it's comprehensive, liability, or collision coverage</p>
+        </div>&nbsp;
+        <div class="card-3">
+            <h1>Roadside Assistance</h1>
+            <p>We've got you covered even in unexpected situations. Our roadside assistance feature ensures that help is just a phone call away, providing peace of mind for you and your passengers</p>
+        </div>
+    </div>
+    </center>
+    <br>
+
+     <div class="accident-img-1"></div>
+        <div id="accident">
+        <h3 id="accident-text">In a situation like this? Don't worry we got you.</h3>
+        </div>
+    <div class="accident-img-2">
+        <div class="YouAreSafe">
+            <span class="ursafe">You are safe in our hands</span>
+        </div>
+    </div><br>
+
+    <div class="col-sm-12" id="insurance-plans">
+        <h1 id=plans-text>We have different number of plans</h1>
+    </div>
+    <br>
+
+<div class="row">
+     <table class="col-sm-6">
+        <tr>
+            <th>Car Insurances</th>
+            <th>Insurance Rates</th>
+            <th>Time period</th>
+        </tr>
+        <tr>
+            <td>AIR CNDITIONER</td>
+            <td>2,432</td>
+            <td>6 MONTHS</td>
+        </tr>
+        <tr>
+            <td>ENGINE</td>
+            <td>4,689</td>
+            <td>6 MONTHS</td>
+        </tr>
+        <tr>
+            <td>TYRE PROTECTION</td>
+            <td>1,232</td>
+            <td>3 MONTHS</td>
+        </tr>
+        <tr>
+            <td>AIRBAGS</td>
+            <td>2,897</td>
+            <td>8 MONTHS</td>
+        </tr>
+        <tr>
+            <td>BATTERY</td>
+            <td>2,508</td>
+            <td>24 MONTHS</td>
+        </tr>
+        <tr>
+            <td>KEY REPLACEMENT</td>
+            <td>3,623</td>
+            <td>12 MONTHS</td>
+        </tr>
+        <tr>
+            <td>BRAKE PADS</td>
+            <td>2,695</td>
+            <td>6 MONTHS</td>
+        </tr>
+    </table><br>
+    <div class="col-sm-1"></div>
+    <table id="comcar" class="col-sm-5">
+         <tr>
+            <th>COMPREHENSIVE CAR PLANS<br></th>
+            <th>ADD-ONS<br></th>
+            <th>RATE<br></th>
+        </tr>
+        <tr>
+            <td>Shield Guard Plan<br></td>
+            <td>Engine Protection, Electrical accessories<br></td>
+            <td>2,310<br></td>
+        </tr>
+        <tr>
+            <td>Total Secure Plan<br><br></td>
+            <td>Zero depreciation, Key and Lock replacement, 24X7 Road assistance<br><br></td>
+            <td>2,319<br><br></td>
+        </tr>
+        <tr>
+            <td>Complete Care Plan<br><br></td>
+            <td>Electrical accesories, Key and Lock replacement<br><br></td>
+            <td>2,246<br><br></td>
+        </tr>
+        <tr>
+            <td>Secure Plus Plan<br><br></td>
+            <td>Electrical accessories, Non-electrical accesories, 24X7 Road assistance<br><br></td>
+            <td>2,566<br><br></td>
+        </tr>
+    </table>
+</div>
+
+<div class="row">
+    <div class="col-sm-7">
+        <table id="bike-table">
+        <tr>
+            <th>Bike Insurances</th>
+            <th>Insurance Rates</th>
+            <th>Time period</th>
+            <th>Lopsem</th>
+            <th>Ipsum</th>
+            <th>Ipsum</th>
+        </tr>
+        <tr>
+            <td>Rubber,nylon and fibre parts</td>
+            <td>4,761</td>
+            <td> 12 Months</td>
+            <td>Lopsem</td>
+            <td>Ipsum</td>
+            <td>Ipsum</td>
+        </tr>
+        <tr>
+            <td>Tubes and tyres of the bike</td>
+            <td>2,490</td>
+            <td> 3 Months</td>
+            <td>Lopsem</td>
+            <td>Ipsum</td>
+            <td>Ipsum</td>
+        </tr>
+        </table><br>
+    </div>
+    <div class="col-sm-5">
+        <table id="bike-table2">
+        <tr>
+            <th>COMPREHENSIVE PLANS<br><br></th>
+            <th>Insurance Rates<br><br></th>
+            <th>Time period<br><br></th>
+        </tr>
+        <tr>
+            <td>Ultimate Plan<br><br></td>
+            <td>3,823<br><br></td>
+            <td>6 MONTHS<br><br></td>
+        </tr>
+        <tr>
+            <td>Ultimate Plan<br><br></td>
+            <td>5,981<br><br></td>
+            <td>12 MONTHS<br><br><br></td>
+        </tr>
+    </table>
+    </div>
+    </div>
+   
+
+    <div class="fam-image">
+        <img src="parents.png" id="fam-img">
+    </div>
+
+    <div class="users" style="margin-top: none">
+        <div>
+            <h1 id="u1h">1.1 Crore+</h1>
+            <p id="u1p">Customers Insured</p>
+            <h1 id="u2h">4.7 Crore+</h1>
+            <p id="u2p">Policies Issued</p>
+        </div>
+    </div>
+
+    <div class="vertical-line">
+    </div>
+
+    <div class="why">
+        <h1 id="why-h">Why should we buy Vehicle Insurance?</h1>
+        <p id="why-p"  data-mdb-animation-start="onScroll">
+
+Purchasing vehicle insurance is essential for several compelling reasons, providing financial protection and peace of mind for vehicle owners. Here are key reasons why one should buy vehicle insurance:
+
+Legal Requirement,
+Financial Protection,
+Medical Coverage,
+Liability Coverage,
+Protection Against Uninsured Drivers,
+Peace of Mind,
+Lender Requirements.<br><br>
+If a vehicle is financed through a loan or lease, the lender typically requires the borrower to maintain comprehensive and collision coverage. This protects the lender's financial interest in the vehicle and is often a condition of the financing agreement.<br><br>
+In summary, purchasing vehicle insurance is a responsible and practical decision that not only fulfills legal requirements but also safeguards against financial risks associated with vehicle ownership. It provides a layer of protection that extends beyond the physical vehicle, covering medical expenses, liabilities, and potential losses in various scenarios.
+        </p>
+    </div>
+
+    <div class="Terms-and-co">
+        <h1 id="tac-heading">Terms And Conditions <span class="arrow-down" onclick="toggleVisibility()" id="arrow"></span></h1>
+        <p id="tac">
+
+    Welcome to Delta Insurance. These terms and conditions govern your relationship with Delta Insurance as a policyholder.<br><br>
+
+    <b>Eligibility:</b><br>
+   -To purchase insurance from Delta, you must be at least 18 years old and have the legal capacity to enter into a contract.<br>
+   -Provide accurate and complete information during the application process.<br><br>
+
+    <b>Coverage:</b><br>
+   -Delta provides insurance coverage for vehicles as outlined in the policy documents.<br>
+   -Policy details, including coverage limits, exclusions, and deductibles, are specified in your policy documentation.<br><br>
+
+    Premiums and Payments:<br>
+   -Premiums are determined based on factors such as coverage type, vehicle details, and the policyholder's history.<br>
+   -Premium payment details, including due dates and accepted payment methods, are specified in the policy documents.<br><br>
+
+    <b>Policy Renewal:</b><br>
+   -Policies are typically renewable annually, with terms and premiums subject to change based on factors such as claim history and market conditions.<br>
+   -Delta reserves the right to refuse policy renewal based on underwriting criteria.<br><br>
+
+    <b>Claims Process:</b><br>
+   -In the event of a claim, promptly notify Delta and provide all necessary documentation and information.<br>
+   -Delta will assess the claim in accordance with the terms outlined in the policy.<br><br>
+
+<b>-Exclusions:</b><br>
+    -Certain events or circumstances may not be covered by the insurance policy. Refer to the policy documents for a detailed list of exclusions.<br><br>
+
+<b>Termination:</b><br>
+   -Delta reserves the right to terminate your insurance policy due to non-payment, misrepresentation, or violation of any terms and conditions.<br>
+   -Policyholders may terminate the policy by providing written notice to Delta, subject to any applicable cancellation fees.
+<br><br>
+<b>Privacy and Data Protection:</b><br>
+   -Delta collects and processes personal information in compliance with applicable data protection laws. Review our Privacy Policy for details.<br><br>
+
+<b>Changes to Terms and Conditions:</b><br>
+    -Delta reserves the right to update these terms and conditions. Notice of changes will be provided in advance.<br><br>
+
+<b>Governing Law:</b><br>
+    -These terms and conditions are governed by the laws of [Jurisdiction], and any disputes will be subject to the exclusive jurisdiction of the courts in [Jurisdiction].<br><br>
+
+<b>Contact Information:</b><br>
+    -For inquiries or concerns regarding these terms and conditions, contact Delta Insurance at [9988 0088 88].<br><br>
+
+By purchasing insurance from Delta, you agree to adhere to these terms and conditions. It is crucial to thoroughly read and understand the provided policy documents. These terms and conditions are effective as of [January 2024].
+    </p>
+    </div>
+</div>
+     <script>
+        function toggleVisibility() {
+            var paragraph = document.getElementById("tac");
+            var arrow = document.getElementById("arrow");
+
+            if (paragraph.style.display === "block") {
+                paragraph.style.display = "none";
+                arrow.classList.remove("active");
+            } else {
+                paragraph.style.display = "block";
+                arrow.classList.add("active");
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var paragraph = document.getElementById("tac");
+            paragraph.style.display = "none";
+        });
+    </script>
+
+    
+
+    <footer style="background-color: rgba(0,95,139,255); color: white; padding: 10px;">
+    <div>
+        <div class="row">
+            <!-- First Column: Contact Us -->
+            <div class="col-md-6">
+                <h4>Contact Us</h4>
+                <ul class="list-unstyled">
+                    <li>Address: RajajiNagar, Bangalore</li>
+                    <li>Phone: +9877283638</li>
+                    <li>Email: info@deltainsurance.com</li>
+                </ul>
+                <h4>Follow Us</h4>
+                <ul class="list-inline social-icons">
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-facebook"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+            <!-- Second Column: Follow Us and Map -->
+            <div class="col-md-6">
+                
+                <!-- Embedded Map -->
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.568992091073!2d77.6105053141173!3d12.934808890882124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15b88b363683%3A0x96a0e21d0cb9a786!2sChrist%20University!5e0!3m2!1sen!2sin!4v1647839505267!5m2!1sen!2sin" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

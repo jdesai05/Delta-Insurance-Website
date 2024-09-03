@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Calculator</title>
+    <link rel="icon" type="image/x-icon" href="gl.png"> <!-- headlogo link-->
+    <link rel="stylesheet" type="text/css" href="homestyle.css"> <!--css linking-->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-rHyoN1iRsVXV4nDdaReB8r/2+9QDpNVnOtN/pmTfaiUK3TI+IMqL4rU4qIpFVoVR" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/0b5201e8ad.js" crossorigin="anonymous"></script>
+
+
+    <style>
+        body 
+        {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        
+        .calculator-container 
+        {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .calculator-input 
+        {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #28a745;
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: rgba(0,95,139,255);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .social-icons li {
+            display: inline;
+            padding-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+   
+<header>
+        <div class="container-fluid">
+            <div class="row" >
+                <div class="col-sm-2">
+                    <img src="delta logo.jpg" id="logo" alt="Delta Insurance Logo">
+                </div>
+                <div class="col-sm-7">
+                    <ul class="nav" id="header">
+                        <li class="nav-item"><a href="home.html" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="aboutusfs.html" class="nav-link">About us</a></li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropbtn">Services^</a>
+                            <div class="dropdown-content">
+                                <a href="health.html">Health Insurance</a>
+                                <a href="vehicle.html">Vehicle Insurance</a>
+                                <a href="termlife.html">Life Insurance</a>
+                            </div>
+                        </li>
+
+
+                        
+                        
+                        <li class="nav-item"><a href="terms.html" class="nav-link">Terms and Conditions</a></li>
+                        <li class="nav-item"><a href="calculator.html" class="nav-link">Calculator</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2" id="searchbar" style="float: left">
+                    <input type="text" placeholder="Search" class="form-control" style="border-radius: 5px">
+                </div>
+                <div class="col-sm-1">
+                    <button class="btn btn-dark mt-2" style="border-radius: 5px;">Search</button>
+                        <br>
+                
+                    <button id="login" class="btn btn-dark mt-2" style="border-radius: 5px;" onclick="window.location.href='login.html';">Login</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <br>
+    <center> <h1 style="background-color: rgba(0,95,139,255); color:white;">Insurance Premium Calculator</h1></center>
+   
+
+    <div class="calculator-container">
+        <div class="calculator-input">
+            <label for="insuranceAmount">Enter Insurance Amount:</label>
+            <input type="number" id="insuranceAmount" placeholder="Enter amount" required>
+        </div>
+
+        <div class="calculator-input">
+            <label for="insuranceDuration">Enter Insurance Duration (in years):</label>
+            <input type="number" id="insuranceDuration" placeholder="Enter duration" required>
+        </div>
+
+        <div class="calculator-input">
+            <label for="age">Enter Age:</label>
+            <input type="number" id="age" placeholder="Enter age" required>
+        </div>
+
+        <div class="calculator-input">
+            <label for="insuranceType">Select Insurance Type:</label>
+            <select id="insuranceType" required>
+                <option value="life">Life Insurance</option>
+                <option value="health">Health Insurance</option>
+                <option value="vehicle">Vehicle Insurance</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        
+        <center>
+            <button onclick="calculateInsurance()" style="background-color: rgba(0,95,139,255)">Calculate Premium</button>
+            <div id="result"></div>
+        </center>
+    </div>
+    <br>
+    <br>
+
+    <footer>
+            <p>&copy; 2024 Delta Vehicle Insurance. All rights reserved.</p>
+        </footer>
+
+    <script>
+        function calculateInsurance() {
+            var insuranceAmount = parseFloat(document.getElementById("insuranceAmount").value);
+            var insuranceDuration = parseInt(document.getElementById("insuranceDuration").value);
+            var age = parseInt(document.getElementById("age").value);
+            var insuranceType = document.getElementById("insuranceType").value;
+
+            // Calculate premium based on insurance type
+            var premium = 0;
+            if (insuranceType === "life") {
+                // Define life insurance premium calculation logic
+                // Example: premium calculation based on insurance amount, duration, and age
+                premium = insuranceAmount * 0.1 + insuranceDuration * 100 + age * 10;
+            } else if (insuranceType === "health") {
+                // Define health insurance premium calculation logic
+                // Example: premium calculation based on insurance amount, duration, and age
+                premium = insuranceAmount * 0.05 + insuranceDuration * 50 + age * 5;
+            } else if (insuranceType === "vehicle") {
+                // Define vehicle insurance premium calculation logic
+                // Example: premium calculation based on insurance amount, duration, and age
+                premium = insuranceAmount * 0.08 + insuranceDuration * 80 + age * 8;
+            }
+            
+            // Display the calculated premium
+            document.getElementById("result").innerText = "Premium: ₹" + premium.toFixed(2);
+        }
+    </script>
+
+</body>
+
+</html>

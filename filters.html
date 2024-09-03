@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Information</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="gl.png"> <!-- headlogo link-->
+    <link rel="stylesheet" type="text/css" href="homestyle.css"> <!--css linking-->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: blue; 
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body ng-app="myApp" ng-controller="InsuranceController">
+    <div class="container">
+        <h1 style="color: blue;">Insurance Information</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Premium</th>
+                    <th>Coverage</th>
+                    <th>Deductible</th>
+                    <th>Renewal Frequency</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="(id, insurance) in filteredInsurances">
+                    <td>{{ insurance.id }}</td>
+                    <td>{{ insurance.name }}</td>
+                    <td>{{ insurance.premium }}</td>
+                    <td>{{ insurance.coverage }}</td>
+                    <td>{{ insurance.deductible }}</td>
+                    <td>{{ insurance.renewalFrequency }}</td>
+                    <td>{{ insurance.rating }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+
+        <div>
+            <label>Filter by Name:</label>
+            <input type="text" ng-model="nameFilter">
+        </div>
+
+        <div>
+            <label>Filter by Premium (Less than):</label>
+            <input type="number" ng-model="premiumFilter">
+        </div>
+
+        <div>
+            <label>Filter by Coverage:</label>
+            <input type="text" ng-model="coverageFilter">
+        </div>
+
+        <div>
+            <label>Filter by Deductible (Less than):</label>
+            <input type="number" ng-model="deductibleFilter">
+        </div>
+
+        <div>
+            <label>Filter by Renewal Frequency:</label>
+            <input type="text" ng-model="renewalFilter">
+        </div>
+
+        <div>
+            <label>Filter by ID:</label>
+            <input type="number" ng-model="idFilter">
+        </div>
+
+        <div>
+            <label>Filter by Rating (Greater than or equal to):</label>
+            <input type="number" step="0.1" ng-model="ratingFilter">
+        </div>
+
+        <button ng-click="updateTable()">Update Table</button>
+        <br>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        var app = angular.module('myApp', []);
+
+        app.controller('InsuranceController', function ($scope) {
+            var jsonData = {
+                "1": {
+                    "id": 1,
+                    "name": "Health Insurance",
+                    "premium": 5000,
+                    "coverage": "Hospitalization",
+                    "deductible": 1000,
+                    "renewalFrequency": "Annual",
+                    "provider": "Provider A",
+                    "rating": 4.5
+                },
+                "2": {
+                    "id": 2,
+                    "name": "Vehicle Insurance",
+                    "premium": 3000,
+                    "coverage": "Collision",
+                    "deductible": 500,
+                    "renewalFrequency": "Bi-annual",
+                    "provider": "Provider B",
+                    "rating": 4.2
+                },
+                "3": {
+                    "id": 3,
+                    "name": "Life Insurance",
+                    "premium": 10000,
+                    "coverage": "Term Life",
+                    "deductible": 0,
+                    "renewalFrequency": "Quarterly",
+                    "provider": "Provider C",
+                    "rating": 4.8
+                },
+                "4": {
+                    "id": 4,
+                    "name": "Travel Insurance",
+                    "premium": 2000,
+                    "coverage": "Trip Cancellation",
+                    "deductible": 200,
+                    "renewalFrequency": "Yearly",
+                    "provider": "Provider D",
+                    "rating": 4.0
+                },
+                "5": {
+                    "id": 5,
+                    "name": "Property Insurance",
+                    "premium": 7000,
+                    "coverage": "Fire Damage",
+                    "deductible": 1500,
+                    "renewalFrequency": "Monthly",
+                    "provider": "Provider E",
+                    "rating": 4.6
+                }
+            };
+
+        $scope.filteredInsurances = jsonData;
+
+        $scope.updateTable = function () {
+            $scope.filteredInsurances = Object.values(jsonData).filter(function (insurance) {
+                return (insurance.name.toLowerCase().includes(($scope.nameFilter || '').toLowerCase()) &&
+                    (isNaN($scope.premiumFilter) || insurance.premium <= $scope.premiumFilter) &&
+                    insurance.coverage.toLowerCase().includes(($scope.coverageFilter || '').toLowerCase()) &&
+                    (isNaN($scope.deductibleFilter) || insurance.deductible <= $scope.deductibleFilter) &&
+                    insurance.renewalFrequency.toLowerCase().includes(($scope.renewalFilter || '').toLowerCase()) &&
+                    insurance.id.toString().includes(($scope.idFilter || '').toString()) &&
+                    (isNaN($scope.ratingFilter) || insurance.rating >= $scope.ratingFilter));
+            });
+        };
+    });
+</script>
+<br>
+<br>
+
+</body>
+
+</html>

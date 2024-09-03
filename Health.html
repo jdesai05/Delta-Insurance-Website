@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" contentwidth="device-width" initial-scale="1">
+    <title>Health Insurance</title>
+    <link rel="icon" type="image/x-icon" href="gl.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="homestyle.css"> <!--css linking-->
+    <style>
+        @import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css');
+body{
+    font-family: serif;
+    font-size: larger;
+    text-align: center;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.header {
+    // Custom header styles go here
+}
+
+.row {
+    margin-bottom: 20px;
+}
+
+
+header {
+    background-color: rgba(0,95,139,255);
+    border: 2px solid black;
+    font-family: serif;
+}
+
+#header 
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: small;
+}
+
+.nav-link 
+{
+    display: block;
+    padding: 15px 20px;
+    margin: 0;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: white;
+}
+
+.nav-link:hover {
+    background-color: #38a9e1;
+    color: black;
+}
+
+#logo {
+    padding-top: none;
+    width: 100%;
+    max-width: 150px;
+}
+
+#searchbar 
+{
+    margin-top: 20px;
+}
+
+.row {
+    margin-top: 15px;
+    margin-bottom: none;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: rgba(0, 95, 139, 255);
+}
+
+        #header 
+        {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-link 
+        {
+            display: block;
+            padding: 15px 20px;
+            margin: 0;
+            font-size: 1.5em;
+            text-decoration: none;
+            color: white;
+        }
+
+        .nav-link:hover {
+            background-color: #38a9e1;
+            color: black;
+        }
+
+        #logo {
+            padding-top: none;
+            width: 100%;
+            max-width: 150px;
+        }
+
+        #searchbar 
+        {
+            margin-top: 20px;
+        }
+
+        .row {
+            margin-top: 15px;
+            margin-bottom: none;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: rgba(0, 95, 139, 255);
+        }
+        footer {
+            background-color: rgba(0, 95, 139, 255);
+            color: white;
+            padding: 10px;
+            text-align: center;
+
+            bottom: 0;
+            width: 100%;
+        }
+
+        .f1 {
+            /* background-color: #e6f3f9; */
+           
+            margin-left: 2px;
+            border-radius: 20px;
+            padding: 10px;
+            
+        }
+
+        .banner1 {
+            float: inline-end;
+        }
+
+        .list-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        dt {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        dd {
+            margin-bottom: 20px;
+            padding-left: 10px;
+            text-align: start;
+        }
+
+        dl {
+            list-style-type: none;
+            background-color: #e6f3f9;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 350px;
+           
+            
+        }
+
+        #personal-details 
+        {
+            background-color: #e6f3f9;
+            border-radius: 10px;
+            text-align: center;
+            width: 100%;
+            align-self: center;
+            padding: 10px;
+            box-shadow: 0 0 10px #b3c2c6;
+        }
+
+        textarea {
+            border-radius: 5px;
+        }
+
+        h2 {
+            color: #670b0b;
+        }
+
+        .exclusions-list {
+            list-style-type: disc;
+            margin-left: 20px;
+            text-align: left;
+        }
+
+        a {
+            color: #670b0b;
+            text-decoration: none;
+        }
+        
+
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .insurance-list 
+        {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .insurance-list-item 
+        {
+            background-color: #fff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.1s ease;
+        }
+
+        .insurance-list-item:hover {
+            transform: scale(1.05);
+        }
+
+header {
+            background-color: rgba(0,95,139,255);
+            border: 2px solid black;
+            font-family: serif;
+        }
+
+        #header 
+        {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            font-size: small;
+        }
+
+        .nav-link 
+        {
+            display: block;
+            padding: 15px 20px;
+            margin: 0;
+            font-size: 1.2em;
+            text-decoration: none;
+            color: white;
+        }
+
+        .nav-link:hover {
+            background-color: #38a9e1;
+            color: black;
+        }
+
+        #logo {
+            padding-top: none;
+            width: 100%;
+            max-width: 150px;
+        }
+
+        #searchbar 
+        {
+            margin-top: 20px;
+        }
+
+        .row {
+            margin-top: 15px;
+            margin-bottom: none;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: rgba(0, 95, 139, 255);
+        }
+        body{
+            font-family: serif;
+            font-size: larger;
+        }
+                #header 
+                {
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0;
+                }
+        
+                .nav-link 
+                {
+                    display: block;
+                    padding: 15px 20px;
+                    margin: 0;
+                    font-size: 1.5em;
+                    text-decoration: none;
+                    color: white;
+                }
+        
+                .nav-link:hover {
+                    background-color: #38a9e1;
+                    color: black;
+                }
+        
+                #logo {
+                    padding-top: none;
+                    width: 100%;
+                    max-width: 150px;
+                }
+        
+                #searchbar 
+                {
+                    margin-top: 20px;
+                }
+        
+                .row {
+                    margin-top: 15px;
+                    margin-bottom: none;
+                }
+                .dropdown {
+                    position: relative;
+                    display: inline-block;
+                }
+        
+                .dropdown-content {
+                    display: none;
+                    position: absolute;
+                    background-color: #f1f1f1;
+                    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                    z-index: 1;
+                }
+        
+                .dropdown-content a {
+                    color: black;
+                    padding: 12px 16px;
+                    text-decoration: none;
+                    display: block;
+                }
+        
+                .dropdown-content a:hover {
+                    background-color: #ddd;
+                }
+        
+                .dropdown:hover .dropdown-content {
+                    display: block;
+                }
+        
+                .dropdown:hover .dropbtn {
+                    background-color: rgba(0, 95, 139, 255);
+                }
+                footer {
+                    background-color: rgba(0, 95, 139, 255);
+                    color: white;
+                    padding: 10px;
+                    text-align: center;
+        
+                    bottom: 0;
+                    width: 100%;
+                }
+        
+                .f1 {
+                    /* background-color: #e6f3f9; */
+                    margin-left: 2px;
+                    border-radius: 20px;
+                    padding: 10px;
+                    
+                }
+        
+                .banner1 {
+                    float: inline-end;
+                }
+        
+                .list-container {
+                    display: flex;
+                    justify-content: space-around;
+                    margin: 20px 0;
+                }
+/*  
+                dt {
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                }
+        
+                dd {
+                    margin-bottom: 20px;
+                    padding-left: 10px;
+                    text-align: start;
+                }
+        
+                dl {
+                    list-style-type: none;
+                    background-color: #e6f3f9;
+                    border-radius: 8px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                    padding: 20px;
+                    width: 350px;    
+                }
+    */
+                form {
+                    background-color: #e6f3f9;
+                    border-radius: 10px;
+                    text-align: center;
+                    width: 100%;
+                    align-self: center;
+                    padding: 10px;
+                    box-shadow: 0 0 10px #b3c2c6;
+                }
+        
+                textarea {
+                    border-radius: 5px;
+                }
+        
+                h2 {
+                    color: #670b0b;
+                }
+        
+                .exclusions-list {
+                    list-style-type: disc;
+                    margin-left: 20px;
+                }
+        
+                a {
+                    color: #670b0b;
+                    text-decoration: none;
+                }
+        
+                a:hover {
+                    text-decoration: underline;
+                }
+        
+                section {
+                    padding: 20px;
+                }
+        
+                .insurance-list 
+                {
+                    list-style-type: none;
+                    padding: 0;
+                }
+        
+                .insurance-list-item 
+                {
+                    background-color: #fff;
+                    margin: 10px 0;
+                    padding: 15px;
+                    border-radius: 8px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                    transition: transform 0.1s ease;
+                }
+        
+                .insurance-list-item:hover {
+                    transform: scale(1.05);
+                }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-2">
+                    <img src="delta logo.jpg" id="logo" alt="Delta Insurance Logo" usemap="#deltamap">
+                    <map name="deltamap">
+                        <area shape="rect" coords="0,0,150,150" alt="Delta Insurance Logo" href="home.html">
+                    </map>
+                </div>
+                <div class="col-sm-7">
+                    <ul class="nav" id="header">
+                        <li class="nav-item"><a href="home.html" class="nav-link">Home</a></li>
+
+                        <li class="nav-item"><a href="aboutusfs.html" class="nav-link">About us</a></li>
+
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropbtn">Services</a>
+                            <div class="dropdown-content">
+                                <a href="health.html">Health Insurance</a>
+                                <a href="vehicle.html">Vehicle Insurance</a>
+                                <a href="termlife.html">Life Insurance</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item"><a href="#" class="nav-link">Terms and Conditions</a></li>
+                        <li class="nav-item"><a href="calculator.html" class="nav-link">Calculator</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2" id="searchbar" style="float: left">
+        <input type="text" id="searchInput" placeholder="policy name">
+        <div id="searchResults"></div>
+                    
+                </div>
+                <div class="col-sm-1">
+                    
+                    <button id="login" class="btn btn-dark mt-2" style=" border-radius: 5px;" 
+                        onclick="window.location.href='login.html';">Login</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="container">
+            <div class="f1">
+                <img src="nurse.jpg" class="banner1" alt="Banner Image" width="450px" height="450px">
+            </div>
+        
+        <div>
+        <h1 >Welcome!</h1>
+        <H2>Delta health insurance</H2>
+        <p>We often forget to prioritize our health. We tend to ignore minor symptoms, delay doctor visits and take our
+            wellness for granted. However, we never know what the future holds for us. Accidents, illnesses and injuries
+            can occur when we least expect them. These unexpected incidents can lead to mounting medical expenses, which
+            can take a toll on our physical, emotional and financial well-being. That’s where health insurance comes in
+            with like- a safety net that provides much-needed support during medical emergencies. You need a holistic
+            policy that helps to negate all the anxiety around the high medical costs associated with quality treatment. A
+            health insurance policy that is extremely fluid and modular. Our health insurance policy doesn’t let you
+            compromise on your health. It lets you customize your plan to get covered up to ₹1 Crore, get unlimited
+            restoration of your sum insured, enjoy no limits on your room rent and more. Now there’s no more compromise
+            with Health Gain Policy!</p>
+        <p>DELTA insurance company provides you with the very professional and user-friendly actions to avail for health
+            insurance. Health insurance provides financial protection against medical expenses and the cost of healthcare
+            services. It is designed to help individuals and families manage the high costs associated with medical
+            treatment and healthcare.</p>
+        </div>
+    
+        <div class="list-container">
+            <div class="col-sm-4">
+            <dl>
+                <h1>Categories</h1>
+                <dt>Individual Health Insurance:</dt>
+                <dd>individual health insurance is a plan wherein the entire sum insured provides coverage for one individual.
+                    If you are seeking a health insurance plan for yourself or individual medical insurance plans for your
+                    family members, you can buy our individual health insurance plans.</dd>
+    
+                <dt>Children's Health Insurance:</dt>
+                <dd>Provides low-cost health insurance coverage for children in families. It includes any critical cases of
+                    medication necessary for the child </dd>
+    
+                <dt>Family:</dt>
+                <dd>A family health insurance plan allows you to include multiple family members under the same health
+                    insurance plan with a single premium. It is worth noting here that under a family health insurance plan,
+                    the sum insured is shared by all the individuals covered in the plan, thereby allowing you to get
+                    mediclaim for your family at a feasible premium..</dd>
+    
+            </dl>
+        </div>
+        <div class="col-sm-4">
+            <dl>
+                <h1>Benefits</h1>
+                <dt>Financial Protection:</dt>
+                <dd>Health insurance helps protect you from high medical expenses. It covers a significant portion of the
+                    medical costs, reducing your out-of-pocket expenses.</dd>
+    
+                <dt>Online Benefits:</dt>
+                <dd>Get 7% - 10 % discounts on various categories .</dd>
+    
+                <dt>Claims Settlement:</dt>
+                <dd>Fair and timely settlements with clear communication throughout the process.</dd>
+    
+                <dt>Emergency Services:</dt>
+                <dd>Quick response to emergencies with immediate support and assistance.</dd>
+    
+                <dt>Third-Party Collaboration:</dt>
+                <dd>Collaboration with trusted service providers for repairs and replacements.</dd>
+            </dl>
+            </div>
+            <div class="col-sm-4">
+            <dl>
+                <h1>Claims</h1>
+    
+                <dt>Claims Process:</dt>
+                <dd>Efficient and transparent process for submitting and tracking claims.</dd>
+    
+                <dt>Claims Assistance:</dt>
+                <dd>Professional support provided by dedicated claims specialists.</dd>
+    
+                <dt>Claims Settlement:</dt>
+                <dd>Fair and timely settlements with clear communication throughout the process.</dd>
+    
+                <dt>Emergency Services:</dt>
+                <dd>Quick response to emergencies with immediate support and assistance.</dd>
+    
+                <dt>Third-Party Collaboration:</dt>
+                <dd>Collaboration with trusted service providers for repairs and replacements.</dd>
+            </dl>
+            </div>
+        </div>
+        <section class="container">
+            <ul class="insurance-list">
+                <li class="insurance-list-item">
+                    <h2>Individual Adult insurance</h2>
+                    <p>Protects you against financial loss in case of an accident or theft involving your vehicle.</p>
+                </li>
+                <li class="insurance-list-item">
+                    <h2>Family Insurance</h2>
+                    <p>Covers a health package for a family .<sub>*no of individuals ,conditions apply</sub>.</p>
+                </li>
+                <li class="insurance-list-item">
+                    <h2>Child Health Insurance</h2>
+                    <p>Provides coverage for medical expenses, ensuring your child can receive necessary healthcare services.
+                    </p>
+                </li>
+                <li class="insurance-list-item">
+                    <h2>Critical Illness Insurance:</h2>
+                    <p>Critical illness insurance is designed to provide coverage for specific critical illnesses such as
+                        cancer,
+                        heart attack, stroke, kidney failure, etc.</p>
+                </li>
+    
+            </ul>
+            <a href="aadi.xml">Know more</a>
+        </section>
+    
+        <h2>Medical Exclusions :</h2>
+        <ul class="exclusions-list">
+            <li>Investigation & Evaluation/ Wellness and Rejuvenation</li>
+            <li>Dietary Supplements & Substances</li>
+            <li>Cosmetic or Plastic Surgery unless due to Accident/Burns or Cancer</li>
+            <li>Hazardous or Adventure sports</li>
+            <li>Breach of law</li>
+            <li>Substance Abuse and Alcohol</li>
+            <li>Refractive Error less than 7.5 diopter</li>
+            <li>Sterility and Infertility</li>
+            <li>Maternity Expenses</li>
+            <li>Dental Treatment</li>
+            <li>External Congenital Anomaly</li>
+            <li>Non-Allopathy / Treatment except AYUSH</li>
+            <li>Self-injury or suicide</li>
+            <li>Nuclear Attack/War</li>
+        </ul>
+    
+    </div>
+    
+    <br>
+    <center>
+    <table style="border: 2px solid black;" >
+    <form id="personal-details">
+            <h1>Apply for health insurance</h1>
+                
+                            <tr>
+                            <td><label>Name: <font style="color: red">*</font></label> </td>
+                            <td><input type="text" placeholder="   Name" required> </td>
+                            </tr>
+                            
+                            <tr>
+                            <td> <label>Phone Number: <font style="color: red">*</font></label> </td>
+                            <td><input type="text" placeholder="   Phone Number"> </td>
+    
+                            </tr>
+                            
+                            <tr>
+                           <td><label>Mail Address: <font style="color: red">*</font></label> </td>
+                           <td><input type="text" placeholder="     Email"></td>
+                           </tr>
+    
+                        <tr>
+                           <td><label> Address: <font style="color: red">*</font></label> </td>
+                           <td><input type="text"  placeholder="      Address"> </td>
+                           </tr>
+                 <tr>   
+                <td><button type="SUBMIT" style="border-radius: 5px; background-color: black; color:white">PROCEED</button> </td> 
+                </tr>
+            </form>
+        </table>
+    </center>
+         
+    </div>
+<br>
+
+    <footer>
+        <p>&copy; 2024 Delta Vehicle Insurance. All rights reserved.</p>
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            $('#searchInput').keyup(function () {
+                var searchValue = $(this).val();
+                if (searchValue.length >= 2) { // Adjust the minimum characters required for search
+                    $.ajax({
+                        url: 'health_insurance.json',
+                        dataType: 'json',
+                        success: function (data) {
+                            var policies = data.policies;
+                            var results = '';
+                            policies.forEach(function (policy) {
+                                if (policy.policyname.toLowerCase().includes(searchValue.toLowerCase())) {
+                                    results += '<p>' + policy.policyname + '</p>';
+                                }
+                            });
+                            $('#searchResults').html(results);
+                        },
+                        error: function (error) {
+                            console.log('Error:', error);
+                        }
+                    });
+                } else {
+                    $('#searchResults').html('');
+                }
+            });
+        });
+   
+    $(document).ready(function () {
+        $('#searchInput').keyup(function () {
+            var searchValue = $(this).val();
+            if (searchValue.length >= 2) {
+                $.ajax({
+                    url: 'health_insurance.json',
+                    dataType: 'json',
+                    success: function (data) {
+                        var policies = data.policies;
+                        var results = '';
+                        policies.forEach(function (policy) {
+                            if (policy.policyname.toLowerCase().includes(searchValue.toLowerCase())) {
+                                // Wrap policy names in anchor tags and give them a class for identification
+                                results += '<a href="#" class="insurance-link" data-policy="' + policy.policyname + '">' + policy.policyname + '</a>';
+                            }
+                        });
+                        $('#searchResults').html(results);
+                    },
+                    error: function (error) {
+                        console.log('Error:', error);
+                    }
+                });
+            } else {
+                $('#searchResults').html('');
+            }
+        });
+    
+        // Event listener for clicks on insurance links
+        $(document).on('click', '.insurance-link', function (event) {
+            event.preventDefault(); // Prevent default link behavior
+            var policyName = $(this).data('policy'); // Get the policy name from data attribute
+            // Scroll to the section where the insurance list is displayed
+            $('html, body').animate({
+                scrollTop: $('.insurance-list').offset().top
+            }, 500);
+            // Highlight the clicked policy or perform any other desired action
+            // For now, let's just alert the clicked policy name
+            alert('You clicked on: ' + policyName);
+        });
+    });
+    
+</script>
+</body>
+
+</html>
